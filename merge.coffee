@@ -1,3 +1,5 @@
+## Not finished!!
+
 arr = [2,1,8,4,9,6,4,7,2]
 
 compare = (item0, item1)->
