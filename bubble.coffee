@@ -1,18 +1,20 @@
 
 
-bubble = (a) ->
+bubble = (arr) ->
   loop
     swapped = false
-    for item, i in a
-      if a[i] > a[i+1]
-        temp = a[i]
-        a[i] = a[i+1]
-        a[i+1] = temp
+    for item, i in arr
+      if arr[i] > arr[i+1]
+        temp = arr[i]
+        arr[i] = arr[i+1]
+        arr[i+1] = temp
         swapped = true
     break unless swapped
 
-bubbleSort = (a)->
-  bubble(a)
-  return a
+bubbleSort = (arr)->
+  bubble(arr)
+  return arr
+
 
 exports.bubbleSort = bubbleSort
+
