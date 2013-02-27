@@ -16,19 +16,16 @@ Here we initialize two arrays: one for the elements greater than the pivot node,
       greater = []
       lesser = []
 
-Here we take advantage of coffeescript's list comprehensions to execute recursive loops over the ever-diminishing arrays.
+Here we execute loops over the ever-diminishing arrays.
 
-      lesser = [arr[i] for i in arr[1...arr.length] if arr[i] < node]
-      greater = [arr[i] for i in arr[1...arr.length] if arr[i] >= node]
-      # for i in [1...arr.length]
-      #   if arr[i] < node
-      #     lesser.push(arr[i])
-      #   else
-      #     greater.push(arr[i])
+      for i in [1...arr.length]
+        if arr[i] < node
+          lesser.push(arr[i])
+        else
+          greater.push(arr[i])
 
-Then we return the two sorted arrays, interposing the essential node element between them.
+Then we return the two sorted arrays, but first recursively sorting the them and then interposing the essential node element between them.
 
-      # return lesser.concat(node, greater)
       return quicksort(lesser).concat(node, quicksort(greater))
 
 Test out the quicksort using a test array.
