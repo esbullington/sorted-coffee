@@ -1,5 +1,5 @@
 
-quicksort = (arr)->
+quickSort = (arr)->
   return []  if arr.length is 0
   node = arr[0]
   # midpoint = Math.floor(arr.length/2)
@@ -11,7 +11,7 @@ quicksort = (arr)->
       lesser.push(arr[i])
     else
       greater.push(arr[i])
-  return quicksort(lesser).concat(node, quicksort(greater))
+  return quickSort(lesser).concat(node, quickSort(greater))
 
 
-exports.quicksort = quicksort
+exports.quickSort = quickSort
